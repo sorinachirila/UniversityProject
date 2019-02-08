@@ -7,7 +7,7 @@ public class Teacher {
     //define necessary fields
     private int id;
     private String name;
-    Set<Course> courses =  new HashSet<>();
+    Set<Course> courses;
 
 
 
