@@ -7,12 +7,15 @@ public class Teacher {
     //define necessary fields
     private int id;
     private String name;
-    Set<Course> courses =  new HashSet<>();;
+    Set<Course> courses =  new HashSet<>();
 
 
 
     //default constructor
     public Teacher() {
+        this.id = 00;
+        this.name = "No teacher";
+        courses =  new HashSet<Course>();
     }
 
     public Teacher(int id, String name, Set<Course> courses) {
@@ -69,21 +72,6 @@ public class Teacher {
     }
 
     @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (!(o instanceof Teacher)) return false;
-        Teacher teacher = (Teacher) o;
-        return getId() == teacher.getId() &&
-                Objects.equals(getName(), teacher.getName()) &&
-                Objects.equals(getCourses(), teacher.getCourses());
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(getId(), getName(), getCourses());
-    }
-
-    @Override
     public String toString() {
         return "Teacher{" +
                 "id=" + id +
@@ -91,4 +79,6 @@ public class Teacher {
                 ", courses=" + courses +
                 '}';
     }
+
+
 }

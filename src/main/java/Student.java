@@ -7,8 +7,8 @@ public class Student {
 
     //default constructor
     public Student() {
-        this.id = id;
-        this.name = name;
+        this.id = 0;
+        this.name = "No student";
     }
 
     //constructor with parameters
@@ -41,15 +41,20 @@ public class Student {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (!(o instanceof Student)) return false;
+
         Student student = (Student) o;
-        return getId() == student.getId() &&
-                Objects.equals(getName(), student.getName());
+
+        if (getId() != student.getId()) return false;
+        return getName() != null ? getName().equals(student.getName()) : student.getName() == null;
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(getId(), getName());
+        int result = getId();
+        result = 31 * result + (getName() != null ? getName().hashCode() : 0);
+        return result;
     }
+
     @Override
     public String toString() {
         return "Student{" +

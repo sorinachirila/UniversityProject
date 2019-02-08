@@ -7,12 +7,16 @@ public class Group {
     //define necessary fields
     private int id;
     private String name;
-    Set<Teacher> teachers = new HashSet<>();
-    Set<Student> students = new HashSet<>();
+    Set<Teacher> teachers;
+    Set<Student> students;
 
 
     //default
     public Group() {
+        this.id = 0;
+        this.name = "no group name";
+        teachers = new HashSet<Teacher>();
+        students = new HashSet<Student>();
     }
 
     //constructor with parameters
@@ -81,31 +85,14 @@ public class Group {
          students.add(student);
      }
 
-     public void updateStudent(Student student){
-         student.setName("Popescu");
+     public void updateStudent(Student student, String studentName){
+         student.setName(studentName);
      }
 
      public void removeStudent(Student student){
          students.remove(student);
      }
 
-
-    //hashcode and equals
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (!(o instanceof Group)) return false;
-        Group group = (Group) o;
-        return getId() == group.getId() &&
-                Objects.equals(getName(), group.getName()) &&
-                Objects.equals(getTeachers(), group.getTeachers()) &&
-                Objects.equals(getStudents(), group.getStudents());
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(getId(), getName(), getTeachers(), getStudents());
-    }
 
     @Override
     public String toString() {

@@ -8,6 +8,8 @@ public class Course {
 
     //default constructor
     public Course() {
+        id = 1000;
+        name = "Unknown course";
     }
 
     //constructor with parameters
@@ -31,21 +33,6 @@ public class Course {
 
     public void setName(String name) {
         this.name = name;
-    }
-
-    //hashcode and equals
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (!(o instanceof Course)) return false;
-        Course course = (Course) o;
-        return getId() == course.getId() &&
-                Objects.equals(getName(), course.getName());
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(getId(), getName());
     }
 
     @Override

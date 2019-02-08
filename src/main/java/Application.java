@@ -61,10 +61,17 @@ public class Application {
         teacher4.addCourse(course1);
         teacher4.addCourse(course6);
 
+        Teacher teacher5 = new Teacher();
+        teacher5.setId(14);
+        teacher5.setName("Breaban");
+        teacher5.addCourse(course4);
+        teacher5.addCourse(course5);
+
         teachers.add(teacher1);
         teachers.add(teacher2);
         teachers.add(teacher3);
         teachers.add(teacher4);
+        teachers.add(teacher5);
 
         // each Group should have 4 Teachers
         //each Group should have 3 Students
@@ -88,7 +95,7 @@ public class Application {
         group2.addTeacher(teacher1);
         group2.addTeacher(teacher2);
         group2.addTeacher(teacher3);
-        group2.addTeacher(teacher4);
+        group2.addTeacher(teacher5);
         group2.addStudent(s1);
         group2.addStudent(s2);
         group2.addStudent(s3);
@@ -127,6 +134,10 @@ public class Application {
             System.out.println(student.toString());
         }
         System.out.println("###########################");
+        System.out.println();
+        System.out.println(group1);//functioneaza pentru ca am suprascris toString()
+        System.out.println();
+        System.out.println(group2);//functioneaza pentru ca am suprascris toString()
 
         //Question: why is better to store Teachers for example in a Set and not in a List?
         //Preserve unique elements
